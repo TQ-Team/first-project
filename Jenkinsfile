@@ -6,6 +6,9 @@ pipeline {
             steps {
                 echo 'Building..'
                 echo "${env.BRANCH_NAME}"
+                if(env.BRANCH_NAME=="develop"){
+                    echo "hello world"
+                }
             }
         }
         stage('Test') {
