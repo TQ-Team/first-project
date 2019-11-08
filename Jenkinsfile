@@ -6,8 +6,11 @@ pipeline {
             steps {
                 echo 'Building..'
                 echo "${env.BRANCH_NAME}"
-                if(env.BRANCH_NAME=="develop"){
-                    echo "hello world"
+                script {
+                    if(env.BRANCH_NAME=="develop"){
+                        println "hello world"
+                        sh 'ls -la'
+                    }
                 }
             }
         }
